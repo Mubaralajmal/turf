@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>turfbooking</title>
+  <style>
+    body {
+      background-color: black;
+      margin: 0;
+      padding: 0;
+    }
+
+    #main {
+      background-color: rgb(24, 138, 9);
+      width: 100%;
+      height: 50px;
+      padding: 5px;
+    }
+
+    .h1 {
+      margin: 10px;
+      margin-left: 20px;
+      font-size: xx-large;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .tig {
+      width: 92%;
+      height: 500px;
+      margin-left: 60px;
+    }
+
+    .turf {
+      width: 250px;
+      height: 140px;
+    }
+
+    .turf-box {
+      border: solid white;
+      color: antiquewhite;
+      width: 250px;
+      height: 330px;
+      margin-top: 50px;
+      margin-left: 30px;
+      margin-bottom: 50px;
+      border-radius: 5px;
+    }
+
+    .turf-box h3 {
+      margin-left: 10px;
+    }
+
+    #vertical {
+      display: flex;
+      width: 100%;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    #footer {
+      background-color: rgb(145, 146, 148);
+      color: bisque;
+      width: 94%;
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .footer-left,
+    .footer-right {
+      flex: 1;
+    }
+
+    .footer-right {
+      text-align: right;
+    }
+
+    .footer-left h3,
+    .footer-left p,
+    .footer-right p {
+      margin: 5px 0;
+    }
+      .form-container {
+      background-color: #ffffff;
+      margin: 40px;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      width: 360px;
+    }
+
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #2e7d32;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background-color: #388e3c;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #2e7d32;
+    }
+    .gallery-container {
+      position: relative;
+      margin-left: 70px;
+      margin-top: 30px;
+      width: 1400px;
+      height: 500px;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .images {
+      display: flex;
+      transition: transform 0.3s ease;
+      width: 100%;
+      height: 100%;
+    }
+
+    .images img {
+       width: 100%;
+      height: 100%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .dots {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      background-color: rgb(255, 255, 255);
+      border-radius: 50%;
+      transition: background-color 0.3s;
+    }
+
+    .dot.active {
+      background-color: white;
+    }
+  </style>
+</head>
+<body>
+  <div id="page">
+    <div id="main">
+      <h1 class="h1">BOOK YOUR PLAY</h1>
+    </div>
+
+    <div class="gallery-container" id="gallery">
+    <div class="images" id="imageTrack">
+      <img src="turf2.webp" alt="1">
+      <img src="turf3.webp" alt="2">
+      <img src="turf4.jpg" alt="3">
+    </div>
+  </div>
+  <div class="dots" id="dotsContainer"></div>
+
+    <h1 style="color: white; text-align: center;">Available Turfs</h1>
+
+    <div id="vertical">
+      <div class="turf-box" id="turf1" onclick="t1()">
+        <img src="turf.png" class="turf" />
+        <h3>Name   : Nutmug</h3>
+        <h3>Place  : Madathil</h3>
+        <h3>Time   : 24/7</h3>
+        <h3>Rate   : $800</h3>
+      </div>
+      <div class="turf-box" id="turf2" onclick="t2()">
+        <img src="turf2.jpg" class="turf" />
+        <h3>Name   : Highburry</h3>
+        <h3>Place  : Vallithode</h3>
+        <h3>Time   : 6AM to 12PM</h3>
+        <h3>Rate   : $1200</h3>
+      </div>
+      <div class="turf-box" id="turf3" onclick="t3()">
+        <img src="turf3.webp" class="turf" />
+        <h3>Name   : Arena</h3>
+        <h3>Place  : Punnad</h3>
+        <h3>Time   : 6AM to 12PM</h3>
+        <h3>Rate   : $1200</h3>
+      </div>
+      <div class="turf-box" id="turf4" onclick="t4()">
+        <img src="turf4.jpg" class="turf" />
+        <h3>Name   : Zeal</h3>
+        <h3>Place  : Uliyil</h3>
+        <h3>Time   : 7AM to 11PM</h3>
+        <h3>Rate   : $800</h3>
+      </div>
+    </div>
+
+    <div id="footer">
+      <div class="footer-left">
+        <h3>Contact Us</h3>
+        <p>📞 +91 98765 43540</p>
+        <p>📧 turfplay@gmail.com</p>
+        <p>📍 Kannur, Kerala, India</p>
+      </div>
+      <div class="footer-right">
+        <p>&copy; 2025 TurfPlay. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="form-container" id="form" style="display: none;">
+     <h2>Book Your Turf</h2>
+    <form id="bookingForm">
+
+      <label for="name">Name</label>
+      <input type="text" id="name" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" minlength="10" maxlength="10" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" required>
+
+      <label for="turf">Select Turf</label>
+      <select id="turf" required>
+        <option value="">Select Turf</option>
+        <option value="Turf A">5's</option>
+        <option value="Turf B">7's</option>
+        <option value="Turf C">11's</option>
+      </select>
+
+      <label for="date">Booking Date</label>
+      <input type="date" id="date" required>
+
+      <label for="slot">Time Slot</label>
+      <select id="slot" required>
+        <option value="">Select Time Slot</option>
+        <option value="06:00 AM - 07:00 AM">06:00 AM - 07:00 AM</option>
+        <option value="07:00 AM - 08:00 AM">07:00 AM - 08:00 AM</option>
+        <option value="08:00 AM - 09:00 AM">08:00 AM - 09:00 AM</option>
+        <option value="05:00 PM - 06:00 PM">05:00 PM - 06:00 PM</option>
+        <option value="06:00 PM - 07:00 PM">06:00 PM - 07:00 PM</option>
+        <option value="07:00 PM - 08:00 PM">07:00 PM - 08:00 PM</option>
+      </select>
+
+      <button type="submit">Confirm Booking</button>
+    </form>
+  </div>
+
+<script>
+  function t1() {
+    document.getElementById('page').style.display = "none";
+    document.getElementById('form').style.display = "block";
+  }
+   function t2() {
+    document.getElementById('page').style.display = "none";
+    document.getElementById('form').style.display = "block";
+  }
+   function t3() {
+    document.getElementById('page').style.display = "none";
+    document.getElementById('form').style.display = "block";
+  }
+   function t4() {
+    document.getElementById('page').style.display = "none";
+    document.getElementById('form').style.display = "block";
+  }
+
+    const images = document.querySelectorAll(".images img");
+    const track = document.getElementById("imageTrack");
+    const dotsContainer = document.getElementById("dotsContainer");
+    const totalImages = images.length;
+    let currentIndex = 0;
+
+    // Create dots
+    for (let i = 0; i < totalImages; i++) {
+      const dot = document.createElement("div");
+      dot.classList.add("dot");
+      if (i === 0) dot.classList.add("active");
+      dotsContainer.appendChild(dot);
+    }
+
+    const dots = document.querySelectorAll(".dot");
+
+    function updateGallery(index) {
+      track.style.transform = `translateX(-${index * 1400}px)`;
+      dots.forEach((d, i) => {
+        d.classList.toggle("active", i === index);
+      });
+    }
+
+    // Auto swipe every 3 seconds
+    function startAutoSwipe() {
+      return setInterval(() => {
+        currentIndex = (currentIndex + 1) % totalImages;
+        updateGallery(currentIndex);
+      }, 4000);
+    }
+
+    let autoSwipe = startAutoSwipe();
+
+    // Swipe handling (touch)
+    let startX = 0;
+    track.addEventListener("touchstart", (e) => {
+      clearInterval(autoSwipe); // stop auto swipe on user interaction
+      startX = e.touches[0].clientX;
+    });
+
+    track.addEventListener("touchend", (e) => {
+      const endX = e.changedTouches[0].clientX;
+      if (startX - endX > 50 && currentIndex < totalImages - 1) {
+        currentIndex++;
+      } else if (endX - startX > 50 && currentIndex > 0) {
+        currentIndex--;
+      }
+      updateGallery(currentIndex);
+      autoSwipe = startAutoSwipe(); // restart auto swipe
+    });
+
+    // Optional: Click dots to jump
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => {
+        clearInterval(autoSwipe);
+        currentIndex = index;
+        updateGallery(index);
+        autoSwipe = startAutoSwipe();
+      });
+    });
+</script>
+</body>
+</html>
